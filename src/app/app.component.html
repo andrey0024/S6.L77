@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <app-game-control
+    (newNumberGenerated)="onNewNumberGenerated($event)"
+    ></app-game-control>
+    </div>
+  </div>   
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-4">
+        <div *ngFor ="let number of numbers" >
+            <p #numbersContent>
+              {{ number.content }}
+          </p>
+        </div>
+      </div>
+      <div class="col-xs-3">
+        <app-odd
+        [oddNumber]="addOddNumber"
+        ></app-odd>
+      </div>
+      <div class="col-xs-3">
+        <app-even
+        [evenNumber]="addEvenNumber"
+        ></app-even>
+      </div>
+    </div>
+  </div>
+
+
